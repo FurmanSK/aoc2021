@@ -3,12 +3,13 @@ import argparse
 
 from day1.day1 import Day1
 from day2.day2 import Day2
+from day3.day3 import Day3
 
 
 if __name__ == "__main__":
     ver = "2021 Advent Of Code solver ver 0.2 by Wes Forman"
 
-    parser = argparse.ArgumentParser(description="Advent of Code Solver")
+    parser = argparse.ArgumentParser(description="Advent of Code 2021 Solver")
     parser.add_argument('-d', '--day', type=int, help="Which day to solve.")
     parser.add_argument('-a', '--all')
     parser.add_argument('-v', '--version', action="version", version=ver, help="Version of solver")
@@ -25,3 +26,6 @@ if __name__ == "__main__":
             d2 = Day2('day2/input.txt')
             print(d2.part1())
             print(d2.part2())
+        if args.day == 3:
+            d3 = Day3('day3/day3.txt')
+            d3.part1()

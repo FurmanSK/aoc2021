@@ -31,8 +31,8 @@ class Day1():
         increase_count = 0
         for i in range(len(self.sonar_data)):
             try:
-                prev_sum = int(self.sonar_data[prev_win[0]]) + int(self.sonar_data[prev_win[1]]) + int(sonar_data[prev_win[2]])
-                next_sum = int(self.sonar_data[prev_win[0]+1]) + int(self.sonar_data[prev_win[1]+1]) + int(sonar_data[prev_win[2]+1])
+                prev_sum = int(self.sonar_data[prev_win[0]]) + int(self.sonar_data[prev_win[1]]) + int(self.sonar_data[prev_win[2]])
+                next_sum = int(self.sonar_data[prev_win[0]+1]) + int(self.sonar_data[prev_win[1]+1]) + int(self.sonar_data[prev_win[2]+1])
                 
                 if next_sum> prev_sum:
                     increase_count += 1
@@ -41,7 +41,6 @@ class Day1():
                 prev_win[1] += 1
                 prev_win[2] += 1
             except:
-                print("end of array")
                 return increase_count
                 
             
