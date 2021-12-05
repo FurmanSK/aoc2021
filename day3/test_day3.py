@@ -7,4 +7,4 @@ def test_day3_part1():
     assert d3.part1() == 198
 
 def test_day3_part2():
-    pass
+    assert d3.part2() == 230

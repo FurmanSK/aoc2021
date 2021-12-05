@@ -28,4 +28,5 @@ if __name__ == "__main__":
             print(d2.part2())
         if args.day == 3:
             d3 = Day3('day3/day3.txt')
-            d3.part1()
+            print(d3.part1())
+            print(d3.part2())
