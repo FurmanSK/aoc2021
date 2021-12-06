@@ -45,11 +45,12 @@ class Day3():
         self.co2array_tpose = self.narray.copy().transpose()
         t_count = 0
         while len(self.oxyarray_tpose) != 1 or len(self.co2array_tpose) != 1:
-            cnt = Counter(self.oxyarray[t_count])
-            if cnt[0] > cnt[1]:
+            cnt_oxy = Counter(self.oxyarray[t_count])
+            cnt_co2 = Counter(self.co2array[t_count])
+            if cnt_oxy[0] > cnt_oxy[1]:
                 most_sig = 0
                 least_sig = 1
-            elif cnt[1] > cnt[0] or cnt[1] == cnt[0]:
+            elif cnt_oxy[1] > cnt_oxy[0] or cnt_oxy[1] == cnt_oxy[0]:
                 most_sig = 1
                 least_sig = 0
             remove = []
@@ -61,6 +62,13 @@ class Day3():
                         remove.append(True)
                 self.oxyarray_tpose = np.delete(self.oxyarray_tpose, remove, 0)
                 self.oxyarray = self.oxyarray_tpose.transpose()
+            
+            if cnt_co2[0] > cnt_co2[1]:
+                most_sig = 0
+                least_sig = 1
+            elif cnt_co2[1] > cnt_co2[0] or cnt_co2[1] == cnt_co2[0]:
+                most_sig = 1
+                least_sig = 0
             remove = []
             if len(self.co2array_tpose) != 1:
                 for row_array in self.co2array_tpose:
